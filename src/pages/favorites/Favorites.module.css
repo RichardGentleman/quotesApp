@@ -1,0 +1,16 @@
+
+.list {
+    display: block;
+    max-width: 700px;
+    background-color: aquamarine;
+    margin: 20px auto;
+}
+
+.listItem {
+    list-style: none;
+    background-color: rgb(207, 172, 240);
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+}

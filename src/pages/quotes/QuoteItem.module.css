@@ -1,0 +1,7 @@
+.quoteBox {
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(192, 187, 187);
+    border-radius: 5px;
+}

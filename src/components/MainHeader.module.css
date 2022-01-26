@@ -1,0 +1,37 @@
+header {
+    background-color: rgb(48, 45, 45);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerTitle {
+    margin-left: 100px;
+    color: #FFF;
+}
+
+ul {
+    display:flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 5px;
+    margin-right: 100px;
+}
+
+li {
+    padding: 5px;
+    margin: 5px 20px;
+}
+
+.link {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.link:hover,
+.link.active {
+    text-decoration: underline;
+    color: rgb(212, 211, 211);
+}
