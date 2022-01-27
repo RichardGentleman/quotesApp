@@ -15,8 +15,8 @@ const newItemHandler = newItem => {
   })
 }
 
-const onDeleteHandler = (data) => {
-  const filtered = itemsList.filter((item) => item.id !== data);
+const onDeleteHandler = (onDeleteItemId) => {
+  const filtered = itemsList.filter((item) => item.id !== onDeleteItemId);
   setItemsList(filtered);
 }
 

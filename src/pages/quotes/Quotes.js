@@ -33,9 +33,9 @@ const Quotes = () => {
     setFav(item);
   }
 
-  const filterDuplicate = favoriteItemsArray.filter(item => item.id === fav.id);
-  filterDuplicate.length < 1 && favoriteItemsArray.push(fav); 
-  const filteredEmpty = favoriteItemsArray.filter(item => item.text);
+  const favoriteFilterDuplicate = favoriteItemsArray.filter(item => item.id === fav.id);
+  favoriteFilterDuplicate.length < 1 && favoriteItemsArray.push(fav); 
+  const favoriteFilteredData = favoriteItemsArray.filter(item => item.text);
 
   const allQuotes = quotes.map((quote, index) => {
     return (
@@ -52,7 +52,7 @@ const Quotes = () => {
   return (
     <>
       <h1>Quotes</h1>
-      <FavContext.Provider value={filteredEmpty}>
+      <FavContext.Provider value={favoriteFilteredData}>
       <Route path="/quotes/favorites">
         <FavoriteQuotes />
       </Route>
