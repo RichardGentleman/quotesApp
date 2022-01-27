@@ -1,16 +1,25 @@
+.btn {
+    background-color: rgb(231, 204, 204);
+}
+
+.btn:hover {
+    background-color: rgb(247, 155, 155);
+}
 
 .list {
     display: block;
     max-width: 700px;
-    background-color: aquamarine;
+    background-color: rgb(92, 92, 92);
     margin: 20px auto;
+    border-radius: 5px;
 }
 
 .listItem {
     list-style: none;
-    background-color: rgb(207, 172, 240);
+    background-color: rgb(226, 226, 226);
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 5px;
+    font-size: 1.2rem;
 }

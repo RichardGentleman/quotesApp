@@ -3,4 +3,6 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 10px;
+    background-color: rgb(158, 158, 158);
+    border-radius: 5px;
 }

@@ -1,3 +1,15 @@
+input {
+    margin: 10px;
+}
+
+.btn {
+    background-color: rgb(218, 240, 218);
+}
+
+.btn:hover {
+    background-color: rgb(143, 206, 143);
+}
+
 .invalid {
     border-color:red;
 }

@@ -1,31 +1,26 @@
-import React, { useContext } from "react";
-import { Route } from "react-router-dom";
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
 import Quotes from "./pages/quotes/Quotes";
 import AddQuote from "./pages/addQuote/AddQuote";
-import Favorites from "./pages/favorites/Favorites";
-import MainHeader from './components/MainHeader';
-import FavContext from './store/fav-context';
-import "./App.css";
+import MainHeader from "./components/MainHeader";
+
+import styles from "./App.module.css";
 
 function App(props) {
-
   return (
-    <div className="App">
+    <div className={styles.App}>
       <MainHeader />
-      <FavContext.Provider value={JSON.parse(localStorage.getItem('sourceData'))}>
-      {/* <FavContext.Provider value="Hello from App"> */}
-      <main>        
+      <main>
+        <Route path="/" exact>
+          <Redirect to="/addquote" />
+        </Route>
         <Route path="/quotes">
           <Quotes />
-        </Route>
-        <Route path="/favorites">
-          <Favorites />
         </Route>
         <Route path="/addquote">
           <AddQuote />
         </Route>
       </main>
-      </FavContext.Provider>
     </div>
   );
 }

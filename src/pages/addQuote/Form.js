@@ -44,7 +44,7 @@ const Form = (props) => {
                 <input type="text" onChange={quoteHandler} value={newQuote} className={!isValid ? styles.invalid : ""} />
                 <label>Author</label>
                 <input type="text" onChange={authorHandler} value={newAuthor} className={!isValid ? styles.invalid : ""} />
-                <button type="submit">Add</button>
+                <button className={styles.btn} type="submit">Add</button>
             </form>
         </div>
     )

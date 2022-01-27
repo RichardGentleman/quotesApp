@@ -7,11 +7,6 @@ nav {
     justify-content: space-between;
 }
 
-.headerTitle {
-    margin-left: 100px;
-    color: #FFF;
-}
-
 ul {
     display:flex;
     justify-content: flex-end;
@@ -23,6 +18,11 @@ ul {
 li {
     padding: 5px;
     margin: 5px 20px;
+}
+
+.headerTitle {
+    margin-left: 100px;
+    color: #FFF;
 }
 
 .link {

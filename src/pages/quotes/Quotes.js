@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { Route } from "react-router-dom";
 
+import FavContext from '../../store/fav-context';
 import QuoteItem from "./QuoteItem";
+import FavoriteQuotes from "./FavoriteQuotes";
+
 import styles from "./Quotes.module.css";
 
-const Quotes = (props) => {
-  const [quotes, setQuotes] = useState([]);
+const favoriteItemsArray = [{text: 'Default Favorite Quote.', author: 'Unknown', id: "x1"}];
 
+const Quotes = () => {
+  const [quotes, setQuotes] = useState([]);
+  const [fav, setFav] = useState(favoriteItemsArray);
+  
   useEffect(() => {
     fetch("https://type.fit/api/quotes")
       .then((response) => {
@@ -22,25 +29,35 @@ const Quotes = (props) => {
       });
   }, []);
 
-  // const filtered = quotes.filter(item => item.author === "Thomas Edison");
+  const moveToFavoritesHandler = (item) => {
+    setFav(item);
+  }
 
-  const allQuotes = quotes.map((quote) => {
-    const randomNumber = (Math.random()*1643).toString();
-    return (    
-    <QuoteItem
-      text={quote.text}
-      author={quote.author}
-      key={randomNumber}
-      id={randomNumber}
-    />
-  )});
+  const filterDuplicate = favoriteItemsArray.filter(item => item.id === fav.id);
+  filterDuplicate.length < 1 && favoriteItemsArray.push(fav); 
+  const filteredEmpty = favoriteItemsArray.filter(item => item.text);
+
+  const allQuotes = quotes.map((quote, index) => {
+    return (
+      <QuoteItem
+        text={quote.text}
+        author={quote.author}
+        key={index}
+        id={index}
+        onMoveToFavorite={moveToFavoritesHandler}
+      />
+    );
+  });
 
   return (
     <>
       <h1>Quotes</h1>
-      <div className={styles.wrapper}>
-        {allQuotes}              
-      </div>
+      <FavContext.Provider value={filteredEmpty}>
+      <Route path="/quotes/favorites">
+        <FavoriteQuotes />
+      </Route>
+      </FavContext.Provider>
+      <div className={styles.wrapper}>{allQuotes}</div>
     </>
   );
 };

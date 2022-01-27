@@ -12,10 +12,10 @@ const MainHeader = () => {
             <NavLink to="/quotes" className={classes.link} activeClassName={classes.active}>Quotes</NavLink>
           </li>
           <li>
-            <NavLink to="/addquote" className={classes.link} activeClassName={classes.active}>Add Quote</NavLink>
+            <NavLink to="/quotes/favorites" className={classes.link} activeClassName={classes.active}>Favorites</NavLink>
           </li>
           <li>
-            <NavLink to="/favorites" className={classes.link} activeClassName={classes.active}>Favorites</NavLink>
+            <NavLink to="/addquote" className={classes.link} activeClassName={classes.active}>Add Quote</NavLink>
           </li>
         </ul>
       </nav>
